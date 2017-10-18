@@ -18,6 +18,13 @@ sap.ui.define([
 			},
 			init : function () {
 				UIComponent.prototype.init.apply(this, arguments);
+				
+				var oData = {
+					value1: 50,
+					value2: 75
+				};
+				var oModel = new sap.ui.model.json.JSONModel(oData);
+				this.setModel(oModel, "dataModel");
 			}
 		});
 	}

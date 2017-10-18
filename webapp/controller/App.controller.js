@@ -5,16 +5,9 @@ sap.ui.controller("de.integrata.training.controller.App", {
 	 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 	 * @memberOf de.integrata.training.controller.App
 	 */
-	onInit: function() {
-		var oData = {
-			value1: 50,
-			value2: 75
-		};
+	// onInit: function() {
 		
-		var oModel = new sap.ui.model.json.JSONModel(oData);
-		oModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
-		sap.ui.getCore().setModel(oModel,"dataModel");
-	},
+	// },
 
 	/**
 	 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
