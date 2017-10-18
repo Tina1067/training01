@@ -1,6 +1,6 @@
 <mvc:View
 	xmlns:mvc="sap.ui.core.mvc"
-	controllerName="controller.App"
+	controllerName="de.integrata.training.controller.App"
 	xmlns="sap.m">
 	<App>
 		<pages>
