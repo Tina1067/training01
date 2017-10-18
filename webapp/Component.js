@@ -19,6 +19,11 @@ sap.ui.define([
 			init : function () {
 				UIComponent.prototype.init.apply(this, arguments);
 				
+				var i18nModel = new sap.ui.model.resource.ResourceModel({
+					bundleUrl: "i18n/i18n.properties"
+				});
+				this.setModel(i18nModel, "i18n");
+				
 				var oData = {
 					value1: 50,
 					value2: 75
