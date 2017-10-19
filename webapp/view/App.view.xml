@@ -8,9 +8,24 @@
 				<content>
 					<List
 						headerText="{i18n>titleFlightCustomer}"
-						items="{model: 'flugkundenModel', path: '/d/results'}" >
+						growing="true"
+						growingScrollToLoad="true"
+						items="{
+							model: 'flugkundenModel', 
+							path: '/FlugkundenSet',
+							sorter: {
+								path: 'Custname',
+								descending: false
+							}
+						}" >
 						<items>
-							<StandardListItem title="{flugkundenModel>Custname}" description="{flugkundenModel>Street}, {flugkundenModel>City}"/>
+							<ObjectListItem 
+								title="{flugkundenModel>Custname}">
+								<attributes>
+									<ObjectAttribute title='Straße' text="{flugkundenModel>Street}"/>
+									<ObjectAttribute title="Stadt" text="{flugkundenModel>City}"/>
+								</attributes>
+							</ObjectListItem>
 						</items>
 					</List>
 				</content>

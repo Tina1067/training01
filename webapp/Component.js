@@ -32,7 +32,12 @@ sap.ui.define([
 				var oModel = new sap.ui.model.json.JSONModel(oData);
 				this.setModel(oModel,"dataModel");
 				
-				var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+				/*var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+				this.setModel(oFlugkundenModel, "flugkundenModel");*/
+				var oFlugkundenModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZGW_FLUGKUNDEN_001_SRV", {
+					disableHeadRequestForToken: true,
+					useBatch: false
+				});
 				this.setModel(oFlugkundenModel, "flugkundenModel");
 			}
 		});
