@@ -4,6 +4,10 @@ sap.ui.define([
 		"use strict";
 
 		return Controller.extend("de.integrata.training.controller.BaseController", {
+			
+			getRouter : function () {
+				return sap.ui.core.UIComponent.getRouterFor(this);
+			},
 			/**
 			 * Convenience method for getting the view model by name.
 			 * @public

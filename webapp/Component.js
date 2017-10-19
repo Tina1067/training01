@@ -14,6 +14,41 @@ sap.ui.define([
 				rootView: {
 					viewName: "de.integrata.training.view.App",
 					type: "XML"
+				},
+				routing: {
+					config: {
+						routerClass: sap.m.Router,
+						viewType: "XML",
+						viewPath: "de.integrata.training.view",
+						controlId: "app",
+						controlAggregation: "pages",
+						transition: "slide",
+						async: true
+					},
+					routes: [
+						{
+							pattern: "",
+							name: "initial",
+							target: [
+								"list"
+							]					
+						},
+						{
+							pattern: "{customerId}",
+							name: "customerDetails",
+							target: [
+								"details"
+							]
+						}
+					],
+					targets: {
+						list: {
+							viewName: "List"
+						},
+						details: {
+							viewName: "Customer"
+						}
+					}
 				}
 			},
 			init : function () {
@@ -30,6 +65,15 @@ sap.ui.define([
 				};
 				var oModel = new sap.ui.model.json.JSONModel(oData);
 				this.setModel(oModel, "dataModel");
+				
+				/*var oFlugkundenModel = new sap.ui.model.json.JSONModel("model/flugkunden.json");
+				this.setModel(oFlugkundenModel, "flugkundenModel");*/
+				var oFlugkundenModel = new sap.ui.model.odata.v2.ODataModel("/sap/opu/odata/sap/ZGW_FLUGKUNDEN_001_SRV", {
+					disableHeadRequestForToken: true,
+					useBatch: false
+				});
+				this.setModel(oFlugkundenModel, "flugkundenModel");
+				this.getRouter().initialize();
 			}
 		});
 	}

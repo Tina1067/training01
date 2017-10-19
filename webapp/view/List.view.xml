@@ -1,0 +1,17 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" controllerName="de.integrata.training.controller.List" xmlns="sap.m">
+	<Page title="{i18n>pgTitle}">
+		<content>
+			<List headerText="{i18n>titleFlightCustomer}" growing="true" growingScrollToLoad="true"
+				items="{model: 'flugkundenModel', path: '/FlugkundenSet', sorter: {path: 'Custname', descending: false}}">
+				<items>
+					<ObjectListItem title="{flugkundenModel>Custname}" type="Navigation" press="onItemPress">
+						<attributes>
+							<ObjectAttribute title="Straße" text="{flugkundenModel>Street}"/>
+							<ObjectAttribute title="Stadt" text="{flugkundenModel>City}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>
