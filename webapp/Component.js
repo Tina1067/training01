@@ -17,7 +17,7 @@ sap.ui.define([
 				},
 				routing: {
 					config: {
-						routerClass: sap.m.Router,
+						routerClass: sap.m.routing.Router,
 						viewType: "XML",
 						viewPath: "de.integrata.training.view",
 						controlId: "app",
@@ -43,10 +43,12 @@ sap.ui.define([
 					],
 					targets: {
 						list: {
-							viewName: "List"
+							viewName: "List",
+							viewLevel: 1
 						},
 						details: {
-							viewName: "Customer"
+							viewName: "Customer",
+							viewLevel: 2
 						}
 					}
 				}

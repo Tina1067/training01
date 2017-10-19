@@ -3,7 +3,7 @@
 	controllerName="de.integrata.training.controller.Customer"
 	xmlns:form="sap.ui.layout.form"
 	xmlns="sap.m">
-	<Page title="Details">
+	<Page title="Details" navButtonPress="onNavBack" showNavButton="true">
 		<content>
 			<form:SimpleForm
 					editable="false"
