@@ -36,8 +36,9 @@ sap.ui.jsview("view.App", {
 			text: "Knopf"
 		});
 		
-		var oVLayout = new sap.m.VBox({
-			items: [
+		var oPage = new sap.m.Page({
+			title: "Title",
+			content: [
 				oSlider1,
 				oText1,
 				oSlider2,
@@ -45,12 +46,11 @@ sap.ui.jsview("view.App", {
 				oButton
 			]
 		});
-		return new sap.m.Page({
-			title: "Title",
-			content: [
-				oVLayout
+		return new sap.m.App({
+			pages: [
+				oPage
 			]
-		});
+});
 	}
 
 });
